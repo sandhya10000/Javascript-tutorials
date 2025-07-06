@@ -1,0 +1,63 @@
+1.
+=> npm init -y
+npm install express
+for nodemon
+ npm i nodemon 
+ Server connection using nodeJs with expressJS?
+ Solution: - 
+const express = require('express');
+const PORT = 8000;
+const app =express();
+app.listen(PORT, ()=>{
+    console.log(`Server is running at ${PORT}`);
+});
+
+2. Difference between promise all and promise Any
+Promise all: - Wait the all sucessive result and execute it parallely
+If any promise fails, the entire Promise.all() fails with that error.
+
+A) Promise.all() — Run Promises in Parallel
+
+ for example:-
+const p1 = Promise.resolve("first);
+const p2 = Promise.resolve("second);
+const p3 = Promise.resolve("third);
+
+Promise.all([p1,p2,p3])
+.then(data=>{
+    console.log(data)
+})  //output: -['first', 'second', 'third']
+
+B) Promise.any() -
+Returns the first fulfilled promise, ignores rejections.
+
+const p1 = Promise.reject('fails')
+const p2 = Promise.reject('fails')
+const p3 =Promise.resolve('success')
+Promise.any([p1,p2,p3])
+.then(result=> {
+    console.log(result)
+}) // output: - success
+
+C) Promise.race() - 
+Return first settled promise either resolve or reject
+
+const p1 = new Promise((resolve) => setTimeout(() => resolve("first"), 1500));
+const p2 = new Promise((resolve) => setTimeout(() => resolve("seconds"), 500));
+Promise.race([p1, p2]).then((result) => {
+  console.log(result);
+});
+//output- seconds
+D) Promise.allSettled() -
+ return all fail and success response
+
+ const p1 =new Promise.resolve('success');
+ const p2 = new Promise.reject('fail');
+ const p3 =new Promise.resolve('done');
+
+Promise.allSettled([p1, p2, p3]).then((result) => {
+  console.log(result);
+});
+
+
+
