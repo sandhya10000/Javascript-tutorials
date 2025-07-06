@@ -59,5 +59,8 @@ Promise.allSettled([p1, p2, p3]).then((result) => {
   console.log(result);
 });
 
+//output { status: 'fulfilled', value: 'Success' },
+  { status: 'rejected', reason: 'Failed' },
+  { status: 'fulfilled', value: 'Done' }
 
 
