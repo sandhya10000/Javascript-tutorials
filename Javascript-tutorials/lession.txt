@@ -64,3 +64,16 @@ Promise.allSettled([p1, p2, p3]).then((result) => {
   { status: 'fulfilled', value: 'Done' }
 
 
+  | Promise Method         | Description                                      |
+| ---------------------- | ------------------------------------------------ |
+| `new Promise()`        | Create a new Promise                             |
+| `.then()`              | Handle success                                   |
+| `.catch()`             | Handle error                                     |
+| `.finally()`           | Always runs after then/catch                     |
+| `Promise.all()`        | Wait for all promises, fails fast                |
+| `Promise.allSettled()` | Wait for all, returns both fulfilled/rejected    |
+| `Promise.race()`       | Returns first settled (win or fail)              |
+| `Promise.any()`        | Returns first **successful**, ignores rejections |
+
+
+
