@@ -49,10 +49,21 @@
 //   console.log(result);
 // });
 
-const p1 = new Promise.resolve("success");
-const p2 = new Promise.reject("fail");
-const p3 = new Promise.resolve("done");
+// const p1 = new Promise.resolve("success");
+// const p2 = new Promise.reject("fail");
+// const p3 = new Promise.resolve("done");
 
-Promise.allSettled([p1, p2, p3]).then((result) => {
-  console.log(result);
+// Promise.allSettled([p1, p2, p3]).then((result) => {
+//   console.log(result);
+// });
+
+function Sum(a, b) {
+  console.log(a + b);
+}
+
+function calculator(a, b, sumcallback) {
+  sumcallback(a, b);
+}
+calculator(1, 2, (a, b) => {
+  console.log(a + b);
 });

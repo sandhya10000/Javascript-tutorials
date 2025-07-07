@@ -77,3 +77,76 @@ Promise.allSettled([p1, p2, p3]).then((result) => {
 
 
 
+Q.3 Difference between null and undefined
+Example
+let a = null;
+let b; // b is undefined
+
+Q.4) Explain Promise
+Solution:- Promise  is a JS object is an eventual completion or failure of asynchronous operation.
+States:
+pending → operation ongoing
+
+
+fulfilled → operation successful
+
+
+rejected → operation failed
+
+function fetchData() {
+  return new Promise((reject, resolve) => {
+    setTimeout(() => {
+      let success = true;
+      if (success) resolve("successful");
+      else {
+        reject("Error Ocurred");
+      }
+    }, 4000);
+  });
+}
+fetchData()
+  .then((result) => {
+    console.log(result, "resultttttttttttttttt");
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+// output :- successful
+
+
+Q.5) Difference between == and ===
+let a = "5";
+let b = 5;
+console.log(a ==b);// true because this checks value not type ; loose equality
+console.log(a===b);// false because this checks value plus type; strict eqality 
+
+Q.6) Callback function
+function Sum(a, b) {
+  console.log(a + b);
+}
+
+function calculator(a, b, sumcallback) {
+  sumcallback(a, b);
+}
+calculator(1, 2, (a, b) => {
+  console.log(a + b);
+});
+
+Q.7) Spread and Rest operator
+Spread:- 
+const user = { name: "Alice", age: 25 };
+const updatedUser = { ...user, age: 26 }; // Copy and update
+
+console.log(updatedUser); // { name: "Alice", age: 26 }
+
+Rest:- 
+const [first, ...others] = [10, 20, 30, 40];
+console.log(first);  // 10
+console.log(others); // [20, 30, 40]
+
+ | Feature | Spread (`...`)                  | Rest (`...`)                   |
+| ------- | ------------------------------- | ------------------------------ |
+| Purpose | Expands values                  | Gathers values                 |
+| Used in | Arrays, Objects, Function calls | Function params, Destructuring |
+| Output  | Individual elements             | Array of grouped elements      |
+
