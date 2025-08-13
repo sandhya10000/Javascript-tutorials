@@ -80,7 +80,8 @@ Promise.allSettled([p1, p2, p3]).then((result) => {
 Q.3 Difference between null and undefined
 Example
 let a = null;
-let b; // b is undefined
+typeof null is object
+let b; // b is undefined  // typeof undefined is undefined
 
 Q.4) Explain Promise
 Solution:- Promise  is a JS object is an eventual completion or failure of asynchronous operation.
@@ -298,4 +299,183 @@ const odd = arr.filter(num => num % 2 !== 0);
 console.log("Even:", even); // [2, 4, 6]
 console.log("Odd:", odd);   // [1, 3, 5]
 
+
+Virtual dom in react
+### 🧠 What is the **Virtual DOM** in React?
+
+The **Virtual DOM (VDOM)** is a lightweight **in-memory representation of the real DOM** (Document Object Model). React uses it to optimize updates and rendering in the browser.
+
+---
+
+### ✅ Why Use Virtual DOM?
+
+Direct manipulation of the **real DOM** is slow and expensive, especially in large applications. The virtual DOM provides a more efficient way of updating the UI.
+
+---
+
+### ⚙️ How It Works in React:
+
+1. **Initial Render:**
+
+   * React creates a virtual DOM tree from JSX using `React.createElement()`.
+
+2. **State/Prop Change:**
+
+   * When state or props change, a **new virtual DOM** is created.
+
+3. **Diffing:**
+
+   * React compares the **new VDOM** with the **previous VDOM** using a process called **reconciliation**.
+   * It identifies the minimal number of changes needed.
+
+4. **DOM Update:**
+
+   * Only the **necessary changes** are applied to the real DOM.
+
+---
+
+### 📈 Benefits of Virtual DOM:
+
+* ✅ Faster performance (minimal real DOM manipulation)
+* ✅ Smooth user interface updates
+* ✅ Clean abstraction from the real DOM
+
+---
+
+### 🖼 Visual Example:
+
+```jsx
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count is: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+};
+
+
+### 🔁 Real DOM vs Virtual DOM
+
+| Feature      | Real DOM                     | Virtual DOM                  |
+| ------------ | ---------------------------- | ---------------------------- |
+| Update Speed | Slow                         | Fast                         |
+| Manipulation | Direct                       | Abstracted                   |
+| Performance  | Less efficient for large UIs | Highly optimized via diffing |
+
+
+
+Q. type of null and undefined
+
+let result;
+console.log(typeof(result), 'undefined-----------');
+// output:- undefined
+
+let re = null; 
+console.log(typeof(re), 'null-----------');
+//output: -object in js
+
+
+//HTML Question 06-08-2025
+<div class="top"><button class="btn">click Me</button></div>
+
+//css 
+.top{
+  color: blue;
+  justify-content:center;
+  align-items: center;
+  height:100vh;
+ 
+  display:flex;
+
+}
+
+
+
+//JavaScript Array push()
+The push() method adds a new element to an array (at the end):
+
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi");
+
+
+The pop() method returns the value that was "popped out":
+
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits.pop();
+
+JavaScript Arrays
+The shift() Method
+The shift() method removes the first element of an array (and "shifts" the other elements to the left):
+
+Banana,Orange,Apple,Mango
+
+Orange,Apple,Mango
+
+
+JavaScript Arrays
+The unshift() Method
+The unshift() method adds new elements to the beginning of an array:
+
+Banana,Orange,Apple,Mango
+
+Lemon,Banana,Orange,Apple,Mango
+
+
+//SPLICE
+The splice() method can be used to add new items to an array:
+
+Example
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");
+
+The splice() Method
+The splice() method adds new elements to an array, and returns an array with the deleted elements (if any):
+let removed = fruits.splice(2, 2, "Lemon", "Kiwi"); 
+
+Original Array:
+Banana,Orange,Apple,Mango
+
+New Array:
+Banana,Orange,Lemon,Kiwi
+
+Removed Items:
+Apple,Mango
+
+//SPLICE METHOD
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits, "fruits--"); //[ 'Banana', 'Orange', 'Apple', 'Mango' ]
+console.log(fruits.splice(0, 2)); //[ 'Orange', 'Apple' ]
+console.log(fruits, "fruits--2"); // ['Banana', 'Mango']
+
+//Remove 2 element from start 0 index and then print rest of the element
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fruit = fruits.splice(2, 0, "Lemon", "Kiwi");
+
+console.log(fruits); //[ 'Banana', 'Orange', 'Lemon', 'Kiwi', 'Apple', 'Mango' ]
+
+/**
+ * These all are modify in original array.
+ * Push()
+ * pop()
+ * shift()
+ * unshift()
+ * splice()
+ * slice()
+ */
+
+//slice method 1 element ko include karta hai or last elemnet me exclude karta hai
+ const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const res = fruits.slice(1);
+
+console.log(res); //[ 'Orange', 'Lemon', 'Apple', 'Mango' ]
+console.log(fruits); //[ 'Banana', 'Orange', 'Lemon', 'Apple', 'Mango' ]
+
+//
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+console.log(fruits.slice(1, 4)); //[ 'Orange', 'Lemon', 'Apple' ]
 
