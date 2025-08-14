@@ -17,7 +17,7 @@ console.log("5" + 3 || "5", "or operator"); //  53
 let text1 = "20";
 let text2 = "5";
 let result = text1 < text2;
-console.log(result, "result-----");
+console.log(result, "result-----"); //true
 /**
  * Let's compare "20" vs "5":
 
