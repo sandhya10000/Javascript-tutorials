@@ -479,3 +479,27 @@ console.log(fruits); //[ 'Banana', 'Orange', 'Lemon', 'Apple', 'Mango' ]
 const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
 console.log(fruits.slice(1, 4)); //[ 'Orange', 'Lemon', 'Apple' ]
 
+//Key Points COOKIES
+
+Size limit: Around 4 KB per cookie.
+
+Data type: Only stores strings.
+
+Scope: Can be restricted to a specific domain and path.
+
+Lifetime:
+
+Session cookies → deleted when the browser closes.
+
+Persistent cookies → expire after a set date/time.
+
+Access:
+
+Can be accessed via JavaScript (document.cookie) unless marked HttpOnly.
+
+Always sent to the server with requests to the same domain.
+
+
+## Cookies definition:
+A cookie is a small piece of data that a website stores on a 
+user’s browser to remember information across visits or page loads.

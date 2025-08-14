@@ -1,0 +1,12 @@
+1) NODE MODULES: - Node modules is a folder when you install packages using node package manager (npm)
+ they are stored inside the node_modules
+then node modules install all dependencies and sub dependencies.
+npm install express
+
+
+2)Package.Json : -
+ Package.json file is root file of your project or app it is automatically generate when you run the command
+ " npm init" its manage your project dependencies , script and setting.
+
+3)Package.lock.json: -
+package lock json is  containe exact version of your project depandencies.
