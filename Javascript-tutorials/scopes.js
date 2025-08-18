@@ -46,7 +46,9 @@
 
 let name = "sandhya";
 let uniquename = [];
-if (!uniquename) {
-  uniquename.push(item);
+for (let item of name) {
+  if (!uniquename.includes(item)) {
+    uniquename.push(item);
+  }
 }
 console.log(uniquename);

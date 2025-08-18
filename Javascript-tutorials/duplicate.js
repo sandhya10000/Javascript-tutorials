@@ -14,6 +14,7 @@ for (let char of str) {
 for (let key in charCount) {
   if (charCount[key] > 1) {
     duplicate.push(key);
+  } else {
   }
 }
 console.log(duplicate);

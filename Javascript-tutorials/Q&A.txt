@@ -10,3 +10,169 @@ npm install express
 
 3)Package.lock.json: -
 package lock json is  containe exact version of your project depandencies.
+
+4)
+//Example of closure
+/**
+ * Closure is combination of function bundled together with it surrounding state.
+ * In other words javascript closure gives a function access to its outer scope of variable.
+ */
+
+function fetchdata() {
+  var name = "sandhya";
+  function displayName() {
+    console.log(name);
+  }
+  displayName();
+}
+
+fetchdata();
+
+
+//To find duplicate value from a string
+
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+//To find duplicate value from a string
+
+let name = "ssaaaannndddyyh"
+let charCount = {};
+let duplicate = [];
+let unique = [];
+for(let char of name){
+   charCount[char] = (charCount[char] || 0) + 1;
+    console.log(charCount)
+}
+
+for(let key in charCount){
+    if(charCount[key] > 1){
+        duplicate.push(key)
+    }
+    else{
+        unique.push(key)
+    }
+}
+console.log(duplicate) //[ 's', 'a', 'n', 'd', 'y' ]
+console.log(unique) //  [ 'h' ]
+
+
+
+// Error Handling Techniques
+try{
+    let data = JSON.parse("Invalid Data)
+    console.log(data)
+}
+catch(error){
+console.error(error)
+}
+
+//Error handling with Promises
+let promise  = new Promise((resolve,reject)=>{
+    reject("Something went wrong!.)
+});
+
+promise
+.then(data => console.log(data))
+.catch(error => console.log(errror))
+
+//Error handling with async/await
+
+async function fetchdata() {
+  try {
+    let result = await Promise.reject("reject error");
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+fetchdata();
+//output : reject error
+
+
+
+/**
+ * Promises are the foundation of asynchronous programming are in modern javascript.
+ * A promise is an object returned by an asynchronous function which represents the current state of the operation
+ * A promise is object provide that handled the success or failure of the operation.
+ */
+
+const fetchData = new Promise((resolve, reject) => {
+  let success = true;
+  resolve("succeeessssssss");
+});
+fetchData
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+
+  There are 4 type of promise 
+  1) Promise.all(): 
+  return all successive promise parallely when one of promise fail then entire fails.
+
+  const p1 = Promise.resolve("one")
+  const p2 = Promise.resolve("two")
+  const p3 = Promise.resolve("three")
+
+  Promise.all([p1,p2,p3]).
+  then(data=>console.log(data))
+
+  2)promise.any():
+  return  first fullfilment promise ignore the rejection.
+
+ const p1 = Promise.resolve("one");
+const p2 = Promise.reject("error");
+const p3 = Promise.resolve("success");
+
+Promise.any([p1, p2, p3]).then((data) => console.log(data));
+
+3)Promise.race():
+return first settle response either resolve or reject.
+
+const p1 = Promise.reject("error one");
+const p2 = Promise.reject("error");
+const p3 = Promise.resolve("success");
+
+Promise.race([p1, p2, p3])
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));//output error one
+
+
+4)Promise.allsettled():
+
+return all fails or succesive response
+
+const p1 = Promise.reject("error one");
+const p2 = Promise.reject("error");
+const p3 = Promise.resolve("success");
+
+Promise.allSettled([p1, p2, p3])
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+
+/**
+ * Hoisting is a process to show default behavior of declaration of functions , variable on the top of their scope.
+ */
+
+console.log(a);
+greet();
+
+var greet = () => {
+  console.log("Good Morning");
+};
+
+var a; // undefined
+
+
+/**
+*/
+let numbers = [1, 2, 3, 4];
+numbers.forEach(num => {
+  console.log(num * 2);  // Just prints, doesn't return new array
+});
+//output:
+2
+4
+6
+8
+
