@@ -296,3 +296,34 @@ Use load balancing + clustering (pm2 or Node cluster).
 
  */
 
+
+// Self prepared interview question:
+ function run(rawarr) {
+  let res = [];
+  for (let item of rawarr) {
+    if (Array.isArray(item)) {
+      const arr1 = run(item); // recursively flatten
+      res.push(...arr1); // spread into result
+    } else {
+      res.push(item); // push normal value
+    }
+  }
+  return res; // return final result
+}
+
+const arr = [1, [2, 3], [4, [5, 6]], 7];
+console.log(run(arr));
+
+2) const arr = [3,5,6];
+const b =10;
+arr.push(b);
+console.log(arr)
+
+// Output: [1, 2, 3, 4, 5, 6, 7]
+
+3) typeof null and arr
+4) == and ===
+5) difference between map and forEach
+6) difference between var, let and const variable.
+7)trancasction
+8)ORM AND ODM Difference
