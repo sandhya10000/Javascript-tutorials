@@ -1,21 +1,28 @@
-1) NODE MODULES: - Node modules is a folder when you install packages using node package manager (npm)
+1) NODE MODULES: - Node modules is a folder when you 
+install packages using node package manager (npm)
  they are stored inside the node_modules
-then node modules install all dependencies and sub dependencies.
+then node modules install all dependencies and 
+sub dependencies.
 npm install express
 
 
 2)Package.Json : -
- Package.json file is root file of your project or app it is automatically generate when you run the command
- " npm init" its manage your project dependencies , script and setting.
+ Package.json file is root file of your project or app 
+ it is automatically generate when you run the command
+ " npm init" its manage your project dependencies , 
+ script and setting.
 
 3)Package.lock.json: -
-package lock json is  containe exact version of your project depandencies.
+package lock json is  containe exact version of your
+ project depandencies.
 
 4)
 //Example of closure
 /**
- * Closure is combination of function bundled together with it surrounding state.
- * In other words javascript closure gives a function access to its outer scope of variable.
+ * Closure is combination of function bundled together 
+ with it surrounding state.
+ * In other words javascript closure gives a function 
+ access to its outer scope of variable.
  */
 
 function fetchdata() {
@@ -93,9 +100,12 @@ fetchdata();
 
 
 /**
- * Promises are the foundation of asynchronous programming are in modern javascript.
- * A promise is an object returned by an asynchronous function which represents the current state of the operation
- * A promise is object provide that handled the success or failure of the operation.
+ * Promises are the foundation of asynchronous programming 
+ are in modern javascript.
+ * A promise is an object returned by an asynchronous 
+ function which represents the current state of the operation
+ * A promise is object provide that handled the success or failure 
+ of the operation.
  */
 
 const fetchData = new Promise((resolve, reject) => {
@@ -108,7 +118,8 @@ fetchData
 
   There are 4 type of promise 
   1) Promise.all(): 
-  return all successive promise parallely when one of promise fail then entire fails.
+  return all successive promise parallely when one of promise 
+  fail then entire fails.
 
   const p1 = Promise.resolve("one")
   const p2 = Promise.resolve("two")
@@ -116,6 +127,18 @@ fetchData
 
   Promise.all([p1,p2,p3]).
   then(data=>console.log(data))
+
+  //Another example
+  const p1 = Promise.resolve("first");
+const p2 = Promise.resolve("second");
+const p3 = Promise.reject("error reject");
+
+Promise.all([p1, p2, p3])
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => console.log(error));
+
 
   2)promise.any():
   return  first fullfilment promise ignore the rejection.
@@ -151,7 +174,8 @@ Promise.allSettled([p1, p2, p3])
   .catch((error) => console.log(error));
 
 /**
- * Hoisting is a process to show default behavior of declaration of functions , variable on the top of their scope.
+ * Hoisting is a process to show default behavior of 
+ declaration of functions , variable on the top of their scope.
  */
 
 console.log(a);
@@ -175,4 +199,26 @@ numbers.forEach(num => {
 4
 6
 8
+
+
+/**
+ * async is used to declare a function as asynchronous
+ * and return always promise
+ *
+ * await pause the execution time until promise resolve.
+ *
+ */
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function fetchFunc() {
+  console.log("start");
+  await delay(3000);
+  console.log("After 3 seconds");
+}
+
+fetchFunc();
+
 
