@@ -221,4 +221,78 @@ async function fetchFunc() {
 
 fetchFunc();
 
+/**
+ * 1) What is Express.js and use?
+ * Express.js is a flexible web application framework in nodejs
+ * It provide features like routing, middleware and HTTP utility 
+ * method , easy API building
+ * used in RESTFUL API  , Single page application and full stack application.
+ * 
+ * 2) What is middleware and use?
+ * Middleware is allow access foro request , response and next middleware
+ * next middleware to pass control to next middleware
+ * used for logging, authentication ,validation and error handling.
+ * 
+ * example :
+ * app.use((req, res, next) => {
+  console.log("Request URL:", req.url);
+  next(); // pass to next middleware/route
+});
+
+3) What is the difference between app.use() and app.get() in Express?
+
+app.use() → Mounts middleware (runs for all HTTP methods if path matches).
+app.get() → Handles only GET requests for a specific route.
+
+5) How do you handle error in middleware ?
+use error handling wiith 4 parameter
+req,err,res,next
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: "Something went wrong!" });
+});
+
+6) How do you handle different HTTP methods in Express?
+app.get('/users', (req, res) => res.send("GET users"));
+app.post('/users', (req, res) => res.send("POST user"));
+app.put('/users/:id', (req, res) => res.send("Update user"));
+app.delete('/users/:id', (req, res) => res.send("Delete user"));
+
+7) How do you implement JWT authentication in Express.js?
+const jwt = require("jsonwebtoken");
+
+// Middleware
+function auth(req, res, next) {
+  const token = req.header("Authorization")?.split(" ")[1];
+  if (!token) return res.status(401).send("Access Denied");
+
+  try {
+    const verified = jwt.verify(token, "secretkey");
+    req.user = verified;
+    next();
+  } catch (err) {
+    res.status(400).send("Invalid Token");
+  }
+}
+8) How do you handle async errors in Express?
+ Using try - catch block or use library like express-asyn-errors
+
+ app.get('/data', async (req, res, next) => {
+  try {
+    let data = await fetchData();
+    res.json(data);
+  } catch (err) {
+    next(err); // passes error to middleware
+  }
+});
+9)How do you improve performance in an Express.js app?
+Enable gzip compression (compression package).
+
+Use caching (Redis, memory-cache).
+
+Optimize DB queries.
+
+Use load balancing + clustering (pm2 or Node cluster).
+
+ */
 
