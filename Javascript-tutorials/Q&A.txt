@@ -229,7 +229,7 @@ fetchFunc();
  * used in RESTFUL API  , Single page application and full stack application.
  * 
  * 2) What is middleware and use?
- * Middleware is allow access foro request , response and next middleware
+ * Middleware is allow access for request , response and next middleware
  * next middleware to pass control to next middleware
  * used for logging, authentication ,validation and error handling.
  * 
@@ -298,7 +298,7 @@ Use load balancing + clustering (pm2 or Node cluster).
 
 
 // Self prepared interview question:
- function run(rawarr) {
+1) function run(rawarr) {
   let res = [];
   for (let item of rawarr) {
     if (Array.isArray(item)) {
