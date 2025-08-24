@@ -366,3 +366,37 @@ Data flow: Angular two-way binding (ngModel) + RxJS; React one-way data flow; co
 
 Learning curve: Angular heavier upfront; React smaller core but many choices.
  */
+
+/**
+ *
+ * 18) Server Connection with MongoDB
+ */
+const mongoose = require("mongoose");
+
+mongoose
+  .connect("mongodb://localhost:27017/mydb")
+
+  .then(() => console.log("Mongo Connected!"))
+  .catch((err) => console.log(err));
+
+/**
+ *Question 19) map vs forEach
+
+map → returns new array.
+
+forEach → returns undefined.
+ */
+/**
+ * 8) ORM vs ODM
+
+ORM (Object Relational Mapper) → SQL DB (Sequelize, TypeORM).
+
+ODM (Object Document Mapper) → NoSQL DB (Mongoose).
+ */
+
+///(ODM - Mongoose):
+const User = mongoose.model("User", { name: String });
+await User.create({ name: "John" });
+//ORM
+// const User = sequelize.define("User", { name: DataTypes.STRING });
+// await User.create({ name: "John" });
