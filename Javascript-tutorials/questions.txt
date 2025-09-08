@@ -39,6 +39,8 @@ console.log(i)
 6) difference between var, let and const variable.
 7)trancasction
 8)ORM AND ODM Difference
+9) What is sequelize in nodejs?
+
 
 
 /**
@@ -431,7 +433,7 @@ forEach → returns undefined.
  */
 /**
  * 8) ORM vs ODM
-
+  
 ORM (Object Relational Mapper) → SQL DB (Sequelize, TypeORM).
 
 ODM (Object Document Mapper) → NoSQL DB (Mongoose).
