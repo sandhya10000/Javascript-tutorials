@@ -520,3 +520,8 @@ Start
 End
 Executed in setImmediate
 Executed in setTimeout with 0 ms
+
+
+Q.)what is indexing?
+Indexing is the database optimization technique 
+used to speed up the retrievel of rows from a table.
