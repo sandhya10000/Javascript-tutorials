@@ -40,6 +40,40 @@ console.log(i)
 7)trancasction
 8)ORM AND ODM Difference
 9) What is sequelize in nodejs?
+10) Difference between authentication and authorization.
+
+Answer:-Authentication
+
+Meaning: Process of verifying the identity of a user (confirming who they are).
+
+Goal: Ensure that the user is genuine.
+
+How: Usually by username/password, OTP, biometric, or tokens.
+
+When: Happens before authorization.
+
+Example:
+
+When you log into Gmail with your email and password → Gmail checks if your credentials are correct.
+
+This step proves you are the right person.
+
+
+Authorization
+
+Meaning: Process of verifying what resources/actions a user is allowed to access (deciding what they can do).
+
+Goal: Ensure that the user has the right permissions.
+
+How: Done by checking roles, permissions, or policies.
+
+When: Happens after authentication.
+
+Example:
+
+In Gmail, after login (authentication), a normal user can read their own emails but cannot access the admin dashboard.
+
+Admins, on the other hand, can access admin features.
 
 
 
